@@ -37,21 +37,28 @@ print(r)
 # print(r.url)
 # print(r.json())
 
-# payload = {"api-key":"0cdce418b38aaf43b6329cf2a41521a19f2a5c64", 'page':1}
-# r = requests.get('https://healthsites.io/api/v3/facilities/', params=payload)
-# print(r.ok)
 
 from coreapi import Client
+from dotenv import load_dotenv
+import os
+
+def configure():
+    load_dotenv()
+
+def main():
+    configure()
+ 
+
+main()
 
 client = Client()
-api_key = "0cdce418b38aaf43b6329cf2a41521a19f2a5c64"
-schema = client.get(f"https://healthsites.io/api/v3/facilities/?api-key={api_key}")
-# schema = client.get("https://healthsites.io/api/docs/")
+schema = client.get("https://healthsites.io/api/docs/")
 
+print(type(os.getenv("api_key")))
 # Interact with the API endpoint
 action = ["facilities", "list"]
 params = {
-    "api-key": "0cdce418b38aaf43b6329cf2a41521a19f2a5c64",
+    "api-key": os.getenv("api_key"),
     "page": 1,
     # "country": ...,
     # "extent": ...,
@@ -61,7 +68,7 @@ params = {
     # "tag-format": ...,
     # "output": ...,
 }
-result = client.action(schema,action, params=params)
+result = client.action(schema, action, params=params)
 # result = client.action(schema)
 
-print(result)
+# print(result)
