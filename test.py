@@ -1,9 +1,9 @@
 import requests
 
-r = requests.get('https://healthsites.io/api/docs/')
+# r = requests.get('https://healthsites.io/api/docs/')
 
 # print the status code
-print(r)
+# print(r)
 
 # print the method we can apply to the request
 # print(dir(r))

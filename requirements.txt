@@ -1,0 +1,13 @@
+certifi==2024.2.2
+charset-normalizer==3.3.2
+coreapi==2.3.3
+coreschema==0.0.4
+idna==3.7
+itypes==1.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+python-dotenv==1.0.1
+requests==2.32.1
+setuptools==70.0.0
+uritemplate==4.1.1
+urllib3==2.2.1
